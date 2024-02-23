@@ -1,0 +1,154 @@
+<!-- HTML Structure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Memory Jar</title>
+</head>
+<body>
+  <div class="container">
+     <h1>Our Memory Jar
+     <h2>Choose a color to reveal a memory</h2></h1>
+    <ul id="memoryList">
+            <div class="formPage">
+                <div class="btn" id="removeLog" onclick="login()">💙💙💙BLUE💙💙💙</div>
+                <div class="btn" id="removeReg" onclick="register()">🍒🍒🍒RED🍒🍒🍒</div>
+                <div class= "showForm" id="loginForm">
+                    <h3>One of my favorite memories with you is of the night we played the ludo at aburi and you won, I'm calling for a rematch😎</h3>
+                    <a href="https://h-anime.net/modaete-yo-adam-kun-episode-06/">Link to an adult anime😉</a>
+                </div>
+                <div class="showForm" id="registerForm">
+                    <h3>One of my favorite memories or you is of how you carried me and tied me up</h3>
+                    <a href="https://proposeme.netlify.app/kelvin">Link to a message I left 4 you🥰</a>
+                </div>
+        </div>
+      </ul>
+</body>
+<style>
+  /* CSS Styles */
+body {
+ font-family: "IBM Plex Serif", serif cursive;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+.container {
+  width: 70%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #27ae60;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+.formPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 120px);
+}
+
+.formPage .btn{
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+    width: 250px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.showForm {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.showForm div {
+    color: #ccc;
+    border-radius: 15px;
+    text-align: center;
+    height: 35px;
+    width: 280px;
+}
+</style>
+<script src="script.js"></script>
+<script>// JavaScript (script.js)
+document.addEventListener("DOMContentLoaded", function () {
+  const memoryList = document.getElementById("memoryList");
+  
+  // Replace these with your actual memories
+  const memories = [
+    
+    // Add more memories
+  ];
+
+  // Add memories dynamically to the list
+  memories.forEach((memory) => {
+    const li = document.createElement("li");
+    li.textContent = memory;
+    memoryList.appendChild(li);
+
+    // Attach click event to show details or perform any action
+    li.addEventListener("click", () => {
+      // You can customize this part to display more details or perform actions
+      alert(`Memory: ${memory}`);
+    });
+  });
+});
+</script>
+<script>
+// Account Page, hide and show elements when, and if required.
+var logForm = document.getElementById("loginForm");
+var regForm = document.getElementById("registerForm");
+var remLog = document.getElementById("removeLog");
+var remReg = document.getElementById("removeReg");
+
+function login() {
+    remLog.style.display = "none";
+    remReg.style.display = "block";
+    logForm.style.display = "flex";
+    regForm.style.display = "none";
+}
+
+function register() {
+    remReg.style.display = "none";
+    remLog.style.display = "block";
+    regForm.style.display = "flex";
+    logForm.style.display = "none";
+}
+</script>
+</html>

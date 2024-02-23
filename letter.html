@@ -1,0 +1,179 @@
+<!-- HTML Structure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Love Letter</title>
+</head>
+<div id="envelope" class="envelope">
+		<div class="card-flyout">
+      <div class="container" id="container">
+    <div class="letter" id="letter">
+      <h1>My Love Letter</h1>
+      <div class="letter-content">
+        <p><em>Dear Kelvin,</em></p>
+        <p><em></em>Words cannot fully express the depth of my feelings...
+          Know you will be expecting a long letter, but all i want to tell you is play the fucking audio😂😂😂</em>
+        </p>
+        <!-- Add more content to your letter -->
+      </div>
+    </div>
+  </div>
+    </div>
+		<div class="envelope-flap inside-flap-left"></div>
+		<div class="envelope-flap inside-flap-right"></div>
+		<div class="envelope-flap back-flap"></div>
+		<div class="envelope-flap front-flap">
+			<button id="openButton" class="open-button">❤</button>
+		</div>
+	</div>
+
+<audio controls autoplay unmuted>
+    <source src="imgs/Shenseea-Ft-Rvssian-Youre-The-One-I-Love-(TrendyBeatz.com).mp3" type="audio/mp3" />
+  </audio>
+<style>
+  /* CSS Styles */
+body {
+  font-family: "IBM Plex Serif", serif cursive;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  width: 70%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #e74c3c;
+}
+
+.letter-content {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.open-button {
+	color: white;
+	background: #E91E63;
+	border: #F06292 0.1em solid;
+	border-radius: 50%;
+	font-size: 3em;
+	animation: pulse 1s infinite;
+	cursor: pointer;
+
+	position: absolute;
+	width: 2em;
+	line-height: 1.8em;
+	top: -1.5em;
+	left: -1em;
+}
+.open-button:focus {
+	outline: none;
+	border-color: #F8BBD0
+}
+.envelope.open .open-button {
+	animation-play-state: paused;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.envelope {
+	background: #d77e35;
+
+	margin-top: 14em;
+	position: relative;
+	width: 30em;
+	height: 18em;
+}
+.envelope-flap {
+	border: transparent 0 solid;
+	border-style: solid;
+
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	width: 0;
+	height: 0;
+}
+.inside-flap-left {
+	border-width: 9em 0 9em 12em;
+	border-color: transparent transparent transparent #ecc460;
+}
+.inside-flap-right {
+	border-width: 9em 12em 9em 0;
+	border-color: transparent #ecc460 transparent transparent;
+
+	right: 0;
+	left: auto;
+}
+.front-flap {
+	border-width: 12em 15em 0 15em;
+	border-color: #f9e1a7 transparent transparent transparent;
+	transition: transform 0.2s ease;
+	transform-origin: top center;
+}
+.back-flap {
+	border-width: 0 12em 9em 12em;
+	border-color: transparent transparent #f7d98f transparent;
+
+	width: 6em;
+	bottom: 0;
+}
+
+.envelope.open .envelope-flap {
+	z-index: 3;
+}
+.envelope.open .front-flap	 {
+	transform: rotateX(180deg);
+	z-index: 1;
+}
+
+.card-flyout {
+	background: #eee;
+	z-index: 0;
+	transition: z-index 0.3s step-start, transform 0s ease-in 0.2s;
+
+	position: absolute;
+	width: 25em;
+	height: 14em;
+	left: 2.5em;
+	top: 1em;
+}
+
+.envelope.open .card-flyout {
+	transform: translateY(-30em);
+	z-index: 2;
+	transition: z-index 0.3s step-end, transform 1s ease-in 0.5s;
+}
+
+</style>
+<script>
+   const envelope = document.getElementById('envelope');
+	document.getElementById('openButton').onclick = () =>
+		envelope.classList.toggle('open')
+ </script>
+</body>
+</html>

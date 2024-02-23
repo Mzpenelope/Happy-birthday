@@ -1,0 +1,25 @@
+{
+  "name": "birthday",
+  "version": "1.0.0",
+  "description": "Birthday greetings..",
+  "main": " ",
+  "scripts": {
+    "server-node": "http-server -p 8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mzpenelope/Happy-birthday"
+  },
+  "keywords": [
+    "Birthday"
+  ],
+  "author": "Phill",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Mzpenelope/Happy-birthday/issues"
+  },
+  "homepage": "https://github.com/Mzpenelope/Happy-birthday#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

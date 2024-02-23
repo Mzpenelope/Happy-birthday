@@ -1,0 +1,90 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../gifty1/index.html">open gift1</a></li>
+        <li><a href="index.html">open gift2</a></li>
+        <li><a href="../gifty3/index.html">opengift3</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+        <div id="header">
+            <h1>Today is my baby's birthday 🎉</h1>
+            <img id="bff-img" src="images/Snapchat-1478717560.jpg">
+            <h2 id="bday-age">25 years old</h2>
+            <h4 id="bday-date">23.02.2024</h4>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">Here's how happy I am for you today 🥳</h2>
+            <h3 class="gift-hint">(Hover over the gift)</h3>
+            <div class="gift-img" id="gift-img-happy"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">How people react when you enter the room 😍</h2>
+            <div class="gift-img" id="gift-img-hot"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">If I had to describe you with ONE word 👇</h2>
+            <div class="gift-img" id="gift-img-genius"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">The one i want to do to you 😋</h2>
+            <div class="gift-img" id="gift-img-badass"></div>
+        </div>
+        
+         <div class="gift-section">
+            <h2 class="gift-title">Cheers to life 🥂</h2>
+            <div class="gift-img" id="gift-img-cheers"></div>
+        </div>
+        
+        <!-- Add the footer here. -->
+        <p id="footer">Here is another gift for you👉 <a href="https://hbd-card.netlify.app/" target="_blank">Dont-click</a></p>
+        
+    <script>
+    const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li')
+    
+    burger.addEventListener('click',()=> {
+        //toggle nav
+        nav.classList.toggle('nav-active');
+
+          // animate links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation){
+                link.style.animation = ''
+            }
+            else{
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.6 }s`;
+            }  
+        });
+        //burger animation
+        burger.classList.toggle('toggle');
+  
+    });
+
+ 
+    }
+navSlide();
+  </script>
+</body>
+
+</html>

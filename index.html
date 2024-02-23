@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+     font-family: "IBM Plex Serif", serif cursive;
+      background-color: #ffffff; /* White background */
+      color: #333; /* Dark text color */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    body:hover
+    {
+      background: #f84258;
+    }
+    nav{
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    min-height:10vh;
+    background-color: #f84258;
+    position: fixed;
+    width: 100%;
+    top:0;
+   
+}
+a{
+    text-decoration: none;
+}
+nav a{
+    color:black;
+}
+nav a:hover{
+    color:#f84258;
+    text-decoration: none;
+
+}
+#login{
+    color:#f84258;
+}
+.logo h3{
+    font-family: 'Sacramento', cursive;
+    font-weight: 500;
+    text-align: center;
+    font-size:45px;
+}
+.logo-name{
+     color: white;
+     text-decoration: wavy;
+     font-style: italic;
+      padding-right: 20px;
+}
+.logo-name:hover{
+    color:whitesmoke;
+    text-decoration: none;
+}
+
+.nav-links{
+    display:flex;
+    list-style: none;
+    width:50%;
+    justify-content: space-around;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size:14px;
+    font-family: 'Montserrat', sans-serif;
+}
+.burger div{
+    background-color:white;
+    width:25px;
+    height:3px;
+    margin:5px;
+    transition: all 0.3s ease;
+}
+
+.burger{
+    display:none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width:80%;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+       position:absolute;
+       right:0px;
+       height:90vh;
+       top:10vh;
+       background-color: #232323;
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+       width:60%;
+       transform:translateX(100%);
+       transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+    nav a{
+        color:#ff4d4d;
+    }
+    nav a:hover{
+        color:#ff4d4d;
+        text-decoration: none;
+    
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+    header 
+    {
+      background-color: #ff4d4d; /* Red header background */
+      color: #ffffff; /* White text color */
+      padding: 20px;
+      width: 100%;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px;
+      padding: 20px;
+      background-color:#333; /* White section background */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    section:hover {
+      background: #ffffff
+    }
+    .ab:hover {
+      background: white;
+    }
+
+    h2:hover
+    {
+         color: green;
+    }
+
+    h2 {
+      color: #333; /* Red heading color */
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .ab{
+      color: white;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4caf50; /* Green button background */
+      color: #ffffff; /* White text color */
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049; /* Darker green on hover */
+    }
+
+     .heart {
+            position: fixed;
+            margin: auto;
+            background-color: white;
+            height: 50px;
+            width: 50px;
+            transform: rotate(-35deg);
+            animation-name: beat;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+            box-shadow: #ff4d4d;
+            top: 40px;
+            left: 15px;
+        }
+
+        .heart:after {
+            background-color: white;
+            content: "";
+            border-radius: 50%;
+            position:fixed;
+            width: 50px;
+            height: 50px;
+            top: 0;
+            left: 30px;
+        }
+
+        .heart:before {
+            background-color: white;
+            content: "";
+            border-radius: 50%;
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            top: -30px;
+            left: 0;
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-35deg);
+            }
+
+            50% {
+                transform: scale(0.6) rotate(-35deg);
+            }
+        }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+    <div class="logo">
+    <div class="heart"></div>
+    <h1><a href="index.html" class="logo-name">🎂🍕🥳<p>Happy Birthday Baby</p></a></h1>
+    <p>Sending you lot of love</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gifty1/index.html">open gift1</a></li>
+        <li><a href="gifty2/index.html">open gift2</a></li>
+        <li><a href="gifty3/index.html">opengift3</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+  
+    <p>______________</p>
+    <p>______________</p>
+    <p>______________</p>
+
+  <section>
+    <a href="poem.html"><h2>Of Course</h2></a>
+    <p>This a special poem I wrote for you.</p>
+    <p class="ab">DONT TOUCH</p>
+    <!-- Add the poem or song content here -->
+  </section>
+
+  <section>
+    <a href="art.html"><h2>heART 4 U</h2></a>
+    <p>These are special arts I created for you</p>
+     <p class="ab">DONT TOUCH</p>
+    <!-- Add the image or description of your artistic creation here -->
+  </section>
+
+  <section>
+    <a href="memories.html"><h2>Memory Jar</h2></a>
+    <p>These are some special memories we created</p>
+     <p class="ab">DONT TOUCH</p>
+    <!-- Add the list of favorite memories here -->
+  </section>
+
+  <section>
+     <a href="letter.html"><h2>Love Letter</h2></a>
+    <p>a special letter that i wrote to you</p>
+     <p class="ab">DONT TOUCH</p>
+    <!-- Add the content of your handwritten letter here -->
+  </section>
+
+  <section>
+    <a href="playlist.html"><h2>Birthday Playlist</h2></a>
+    <p>Listen to the special playlist i prepared for you</p>
+    <p class="ab">DONT TOUCH</p>
+    <!-- Add the Spotify playlist or links to the songs here -->
+  </section>
+
+    <section>
+    <a href="lan.html"><h2>Happy Birthday</h2></a>
+    <p>Enjoy the silence</p>
+    <p class="ab">DONT TOUCH</p>
+    <!-- Add recorded phrases or any interactive elements here -->
+     </section>
+
+  <footer>
+    <a href="goodie 2/index.html" class="btn">Open gift 4 Now</a>
+  </footer>
+  <script>
+    const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li')
+    
+    burger.addEventListener('click',()=> {
+        //toggle nav
+        nav.classList.toggle('nav-active');
+
+          // animate links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation){
+                link.style.animation = ''
+            }
+            else{
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.6 }s`;
+            }  
+        });
+        //burger animation
+        burger.classList.toggle('toggle');
+  
+    });
+
+ 
+    }
+navSlide();
+  </script>
+
+</body>
+
+</html>
